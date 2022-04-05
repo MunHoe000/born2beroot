@@ -21,5 +21,5 @@
     127.0.0.1 localhost
     127.0.1.1 <new_hostname>
     ```
-13. To go back to login page 'exit'
+13. To go back to login page `exit`
 14. To reboot VM `sudo reboot`
