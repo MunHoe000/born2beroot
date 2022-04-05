@@ -1,7 +1,7 @@
 # 42KL Born2beroot
 To setup virtual machine
 
-To check if SSH service is started `(sudo) service ssh status`
+To check if SSH service is started ```(sudo) service ssh status```
 ### To check if UFW service is started
 ```
 (sudo) service ufw status
