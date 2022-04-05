@@ -6,18 +6,8 @@
 2. To check if UFW service is started `(sudo) service ufw status`
 3. To add a <user> `sudo adduser <user>`
 4. To verify if <user> is created `getent passwd <user>`
-  ### To create a new `group`
-```
-sudo addgroup <group>
-```
-### To add `user` into a group
-```
-sudo adduser <user> <group>
-
-or 
-
-sudo usermod -aG  <group> <user>
-```
+5. To create a new <group> `sudo addgroup <group>`
+6. To add <user> into a group `sudo adduser <user> <group> or sudo usermod -aG  <group> <user>`
 ### To check if `user` is in a `group`
 ```
 getent <group> <user>
