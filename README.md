@@ -1,15 +1,10 @@
 # 42KL Born2beroot
-To setup virtual machine
 
-To check if SSH service is started  ```(sudo) service ssh status```
-### To check if UFW service is started
-```
-(sudo) service ufw status
-```
-### To add a `user`
-```
-sudo adduser <user>
-```
+
+
+1. To check if SSH service is started  `(sudo) service ssh status`
+2. To check if UFW service is started `(sudo) service ufw status`
+3. To add a `user``sudo adduser <user>`
 ### To verify if `user` is created
 ```
 getent passwd <user>
