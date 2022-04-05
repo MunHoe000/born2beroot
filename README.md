@@ -13,8 +13,8 @@
 9. To switch user `sudo su - <user>`
 10. To check current hostname 'hostnamectl'
 11. To change hostname to <new_hostname>
-    'hostnamectl set-hostname <new_hostname>`
+    `hostnamectl set-hostname <new_hostname>`
     `sudo nano /etc/hosts`
-    '127.0.0.1 localhost`
-    `127.0.1.1 <new_hostname>'
+    `127.0.0.1 localhost`
+    `127.0.1.1 <new_hostname>`
 10. To reboot VM `sudo reboot`
