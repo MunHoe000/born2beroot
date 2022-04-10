@@ -1,7 +1,6 @@
 # 42KL Born2beroot
 
 
-
 1. To check if SSH service is started  `(sudo) service ssh status`
 2. To check if UFW service is started `(sudo) service ufw status`
 3. To enable UFW 'sudo ufw enable'
@@ -36,7 +35,9 @@
     normally used to schedule a job that is executed periodically – for example, to send out a notice every
     morning.
     ```
-###To setup cron job
+    
+### To set up cron job    
+
 1. To set up cron job, add a <name>.sh (monitoring.sh for this project)  file in /usr/local/bin/ for a bash script
 2. In Born2BeRoot, place the following bash script in the created <name>.sh file
     ```
