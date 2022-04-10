@@ -38,7 +38,7 @@
     
 ### To set up cron job    
 
-1. To set up cron job, add a <name>.sh (monitoring.sh for this project)  file in /usr/local/bin/ for a bash script
+1. To set up cron job, add a `<name>.sh` (monitoring.sh for this project)  file in `/usr/local/bin/` for a bash script
 2. In Born2BeRoot, place the following bash script in the created <name>.sh file
     ```
     #!/bin/bash
