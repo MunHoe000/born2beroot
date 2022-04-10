@@ -74,3 +74,4 @@
     In total it would have run 3 same scripts in a minute, each delayed by 20s than the 
     previous to look as if the cron job is running 20s once.
     ```
+6. To stop cron job without editing the crontab `sudo systemctl stop cron`. To enable back 'sudo systemctl start cron`
