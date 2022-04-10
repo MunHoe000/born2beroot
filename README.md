@@ -36,21 +36,27 @@
     normally used to schedule a job that is executed periodically – for example, to send out a notice every
     morning.
     ```
-18. To set up cron job, add a <name>.sh file in /usr/local/bin/ for a bash script
-19. In Born2BeRoot, place the following bash script in the created <name>.sh file
+###To setup cron job
+1. To set up cron job, add a <name>.sh (monitoring.sh for this project)  file in /usr/local/bin/ for a bash script
+2. In Born2BeRoot, place the following bash script in the created <name>.sh file
     ```
     #!/bin/bash
-    wall $'#Architecture: ' `hostnamectl | grep "Operating System" | cut -d ' ' -f5- ` `awk -F':' '/^model name/            {print $2}' /proc/cpuinfo | uniq | sed -e 's/^[ \t]*//'` `arch` \
-$'\n#CPU physical: '`cat /proc/cpuinfo | grep processor | wc -l` \
-$'\n#vCPU:  '`cat /proc/cpuinfo | grep processor | wc -l` \
-$'\n'`free -m | awk 'NR==2{printf "#Memory Usage: %s/%sMB (%.2f%%)", $3,$2,$3*100/$2 }'` \
-$'\n'`df -h | awk '$NF=="/"{printf "#Disk Usage: %d/%dGB (%s)", $3,$2,$5}'` \
-$'\n'`top -bn1 | grep load | awk '{printf "#CPU Load: %.2f\n", $(NF-2)}'` \
-$'\n#Last boot: ' `who -b | awk '{print $3" "$4" "$5}'` \
-$'\n#LVM use: ' `lsblk |grep lvm | awk '{if ($1) {print "yes";exit;} else {print "no"} }'` \
-$'\n#Connection TCP:' `netstat -an | grep ESTABLISHED |  wc -l` \
-$'\n#User log: ' `who | cut -d " " -f 1 | sort -u | wc -l` \
-$'\nNetwork: IP ' `hostname -I`"("`ip a | grep link/ether | awk '{print $2}'`")" \
-$'\n#Sudo:  ' `grep 'sudo ' /var/log/auth.log | wc -l`
+    wall $'#Architecture: ' `hostnamectl | grep "Operating System" | cut -d ' ' -f5- ` `awk -F':' '/
+    ^model name/ {print $2}' /proc/cpuinfo | uniq | sed -e 's/^[ \t]*//'` `arch` \
+    $'\n#CPU physical: '`cat /proc/cpuinfo | grep processor | wc -l` \
+    $'\n#vCPU:  '`cat /proc/cpuinfo | grep processor | wc -l` \
+    $'\n'`free -m | awk 'NR==2{printf "#Memory Usage: %s/%sMB (%.2f%%)", $3,$2,$3*100/$2 }'` \
+    $'\n'`df -h | awk '$NF=="/"{printf "#Disk Usage: %d/%dGB (%s)", $3,$2,$5}'` \
+    $'\n'`top -bn1 | grep load | awk '{printf "#CPU Load: %.2f\n", $(NF-2)}'` \
+    $'\n#Last boot: ' `who -b | awk '{print $3" "$4" "$5}'` \
+    $'\n#LVM use: ' `lsblk |grep lvm | awk '{if ($1) {print "yes";exit;} else {print "no"} }'` \
+    $'\n#Connection TCP:' `netstat -an | grep ESTABLISHED |  wc -l` \
+    $'\n#User log: ' `who | cut -d " " -f 1 | sort -u | wc -l` \
+    $'\nNetwork: IP ' `hostname -I`"("`ip a | grep link/ether | awk '{print $2}'`")" \
+    $'\n#Sudo:  ' `grep 'sudo ' /var/log/auth.log | wc -l`
     ```
-16. To edit the timing for cron job interval 
+3. To add the rule that script would execute without sudo password 'sudo visudo'
+   Add this line 'your_username ALL=(ALL) NOPASSWD: /usr/local/bin/monitoring.sh'
+4. To edit the timing for cron job interval 'ssudo crontab -u root -e' 
+   The scheduled tasks are structured as '[minute] [hour] [day_of_month] [month] [day_of_week] [command_to_run]'
+   '*/10 * * * * /usr/local/bin/monitoring.sh'
