@@ -61,7 +61,8 @@
 4. To edit the timing for cron job interval `sudo crontab -u root -e` 
    The scheduled tasks are structured as `[minute] [hour] [day_of_month] [month] [day_of_week] [command_to_run]`<br/>
    E.g. `*/10 * * * * /usr/local/bin/monitoring.sh` for it to run every 10 mins
-5. By default, cron job cannot run in second interval (fastest is once a minute). To bypass that limiation and have cron job to run in seconds interval, make cron job with the same cron job but the second one delayed by a certain interval. E.g. to run monitoring.sh at **20 second** interval,
+5. By default, cron job cannot run in second interval (fastest is once a minute). To bypass that limiation and have cron job to run in seconds interval, make cron job with the same cron job but the second one delayed by a certain interval. <br/> 
+    E.g. to run monitoring.sh at 20 second interval,
     ```
     a. * * * * * bash /usr/local/bin/monitoring.s
        (at the first minute)
