@@ -70,6 +70,6 @@
     c. * * * * * sleep 40; bash /usr/local/bin/monitoring.sh_ 
        (at the first minute also but sleep for 40 seconds to let a and b run first)
     
-    In total it would have run 3 same scripts in a minute, each delayed by 20s than the previous 
-    to look as if the cron job is running 20s once.
+    In total it would have run 3 same scripts in a minute, each delayed by 20s than the 
+    previous to look as if the cron job is running 20s once.
     ```
