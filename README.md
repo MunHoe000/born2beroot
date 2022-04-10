@@ -56,8 +56,8 @@
     $'\nNetwork: IP ' `hostname -I`"("`ip a | grep link/ether | awk '{print $2}'`")" \
     $'\n#Sudo:  ' `grep 'sudo ' /var/log/auth.log | wc -l`
     ```
-3. To add the rule that script would execute without sudo password 'sudo visudo'
-   Add this line 'your_username ALL=(ALL) NOPASSWD: /usr/local/bin/monitoring.sh'
-4. To edit the timing for cron job interval 'ssudo crontab -u root -e' 
-   The scheduled tasks are structured as '[minute] [hour] [day_of_month] [month] [day_of_week] [command_to_run]'
-   E.g. '*/10 * * * * /usr/local/bin/monitoring.sh'
+3. To add the rule that script would execute without sudo password `sudo visudo`<br/>
+   Add this line `your_username ALL=(ALL) NOPASSWD: /usr/local/bin/monitoring.sh`
+4. To edit the timing for cron job interval `sudo crontab -u root -e` 
+   The scheduled tasks are structured as `[minute] [hour] [day_of_month] [month] [day_of_week] [command_to_run]`<br/>
+   E.g. `*/10 * * * * /usr/local/bin/monitoring.sh` for it to run every 10 mins
