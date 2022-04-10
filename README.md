@@ -60,4 +60,4 @@
    Add this line 'your_username ALL=(ALL) NOPASSWD: /usr/local/bin/monitoring.sh'
 4. To edit the timing for cron job interval 'ssudo crontab -u root -e' 
    The scheduled tasks are structured as '[minute] [hour] [day_of_month] [month] [day_of_week] [command_to_run]'
-   '*/10 * * * * /usr/local/bin/monitoring.sh'
+   E.g. '*/10 * * * * /usr/local/bin/monitoring.sh'
