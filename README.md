@@ -44,7 +44,7 @@
     morning.
     ```
 ### To connect using SSH
-1. To get IP address `ip addr`
+1. To get IP address `ip addr` if want to get exact one, `ip addr | grep -o -P '(?<=inet).*(?=brd)'`
 2. To connect use command `ssh <username>@<VM's ip address> -p <port number>` 
    E.g. `ssh shum@1.2.112.231 -p 4242` means connect to user  __shum__ at the IP address of __1.2.112.231__ using the port __4242__
 3. To exit connection `exit` 
