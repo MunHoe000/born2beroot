@@ -3,21 +3,29 @@
 
 1. To check if SSH service is started  `(sudo) service ssh status`
 2. To check if UFW service is started `(sudo) service ufw status`
-3. To enable UFW 'sudo ufw enable'
-4. To check UFW port rules 'sudo ufw status numbered'
-5. After Step 4, to delete a rule numbered <number> in UFW 'sudo ufw delete <number>'
-6. To add back a rule e.g. 4242 'sudo ufw allow <4242>'
-7. To check if sudo program is properly installed 'sudo' a help message should pop up
-8. To view partition 'lsblk'
-9. To add a <user> `sudo adduser <user>`
-10. To verify if <user> is created `getent passwd <user>`
-11. To create a new <group> `sudo addgroup <group>`
-12. To add <user> into a group `sudo adduser <user> <group> OR sudo usermod -aG  <group> <user>`
-13. To check if <user> is in a <group> `getent <group> <user>`
-14. To view all users in a group `getent group`
-15. To switch user `sudo su - <user>`
-16. To check current hostname 'hostnamectl'
-17. To change hostname to <new_hostname>
+3. To enable UFW `sudo ufw enable`
+4. To check UFW port rules `sudo ufw status numbered`
+5. To change the default port for SSH
+   ```
+   sudo nano /etc/ssh/ssh_config 
+   
+   sudo service ssh restart
+   ```
+   change #Port 22 to Port 4242 (yes remove that #)
+6. To check if the default port is set `sudo grep Port /etc/ssh/ssh_config`
+7. After Step 4, to delete a rule numbered <number> in UFW `sudo ufw delete <number>`
+8. To add back a rule e.g. 4242 `sudo ufw allow <4242>`
+9. To check if sudo program is properly installed `sudo` a help message should pop up
+10. To view partition `lsblk`
+11. To add a <user> `sudo adduser <user>`
+12. To verify if <user> is created `getent passwd <user>`
+13. To create a new <group> `sudo addgroup <group>`
+14. To add <user> into a group `sudo adduser <user> <group> OR sudo usermod -aG  <group> <user>`
+15. To check if <user> is in a <group> `getent <group> <user>`
+16. To view all users in a group `getent group`
+17. To switch user `sudo su - <user>`
+18. To check current hostname `hostnamectl`
+19. To change hostname to <new_hostname>
     ```
     hostnamectl set-hostname <new_hostname>
     sudo nano /etc/hosts
