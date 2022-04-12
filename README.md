@@ -46,7 +46,7 @@
 ### To connect using SSH
 1. To get IP address `ip addr`
 2. To connect use command `ssh <username>@<VM's ip address> -p <port number>` 
-   E.g. `ssh shum@1.2.112.231 -p 4242` means connect to user  `shum` at the IP address of `1.2.112.231` using the port `4242`
+   E.g. `ssh shum@1.2.112.231 -p 4242` means connect to user  _shum_ at the IP address of _1.2.112.231_ using the port _4242_
 3. To exit connection `exit` 
     
 ### To set up cron job    
