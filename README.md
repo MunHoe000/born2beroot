@@ -35,8 +35,8 @@
     ```
 13. To go back to login page `exit`
 14. To reboot VM `sudo reboot`
-15. To change password policy 'sudo nano /etc/pam.d/common-password' reboot to take effect
-16. To change password expiration 'sudo nano /etc/login.defs' reboot to take effect
+15. To change password policy `sudo nano /etc/pam.d/common-password` reboot to take effect
+16. To change password expiration `sudo nano /etc/login.defs` reboot to take effect
 17. What is a cron job? 
     ```
     A cron job is a Linux command used for scheduling tasks to be executed sometime in the future. This is
