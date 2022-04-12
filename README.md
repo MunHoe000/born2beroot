@@ -11,7 +11,7 @@
    
    sudo service ssh restart
    ```
-   change #Port 22 to Port 4242 (yes remove that #)
+   change #Port 22 to Port 4242 or any other port (yes remove that #)
 6. To check if the default port is set `sudo grep Port /etc/ssh/ssh_config`
 7. After Step 4, to delete a rule numbered <number> in UFW `sudo ufw delete <number>`
 8. To add back a rule e.g. 4242 `sudo ufw allow <4242>`
